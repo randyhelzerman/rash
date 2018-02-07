@@ -6,7 +6,12 @@ SET(CMAKE_BUILD_TYPE Debug)
 
 SET(CMAKE_C_FLAGS, "-Wall -Wextra -Wpedantic -Wformat=2 -Wno-unused-parameter -Wshadow -Wwrite-strings -Wstrict-prototypes -Wold-style-definition -Wredunndant-decls -Wnested-externs -Wmissing-include-dirs")
 
+SET(CURSES_USE_NCURSES TRUE)
 
+find_package(Lua 5.3 REQUIRED)
+INCLUDE_DIRECTORIES(${LUA_INCLUDE_DIR})
+
+find_package(Curses 6.1 REQUIRED)
 
 
 ####################################
@@ -33,5 +38,4 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 ADD_SUBDIRECTORY(src)
 ADD_SUBDIRECTORY(test)
-
-find_package(Lua 5.3 REQUIRED)
+ADD_SUBDIRECTORY(swig)
