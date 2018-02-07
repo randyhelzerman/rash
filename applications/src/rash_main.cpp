@@ -122,7 +122,7 @@ int main(int argc, char* argv[])
     if(next_x >= max_x || next_x < 0)
       direction *= -1;
 
-      // update the position
+    // update the position
     x += direction;
   }
 
